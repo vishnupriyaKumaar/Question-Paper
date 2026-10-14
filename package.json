@@ -1,0 +1,39 @@
+{
+  "name": "grt-question-paper-generator",
+  "version": "2.0.0",
+  "private": true,
+  "description": "GRT Question Paper Generator - React + Express + Node on Firebase Firestore, deployed as one Vercel project",
+  "scripts": {
+    "postinstall": "npm install --prefix client --include=dev --no-audit --no-fund",
+    "build": "npm run build --prefix client",
+    "start": "node server/index.js",
+    "test": "node server/engine/tests/run.js",
+    "dev": "concurrently -n api,web -c yellow,cyan \"node --watch server/index.js\" \"npm run dev --prefix client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "npm run dev --prefix client"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.60.0",
+    "@tesseract.js-data/eng": "^1.0.0",
+    "cors": "^2.8.5",
+    "docx": "^9.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "firebase-admin": "^12.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.8.0",
+    "multer": "^2.0.2",
+    "pdf-parse": "1.1.1",
+    "sharp": "^0.35.5",
+    "tesseract.js": "^7.0.0",
+    "word-extractor": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
